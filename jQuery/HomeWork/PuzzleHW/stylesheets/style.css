@@ -1,0 +1,55 @@
+#btn {
+  text-align: center;
+}
+
+#btn button {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+}
+
+#picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+#picture #game {
+  width: 600px;
+  height: 600px;
+  border: border-box;
+  border: 1px #000 solid;
+  margin: 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#picture #image {
+  width: 610px;
+  height: 610px;
+  border: border-box;
+  border: 1px #000 solid;
+  margin: 0 30px;
+}
+
+#title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#title h1 {
+  padding: 0 200px;
+  margin-bottom: 0px;
+}
+/*# sourceMappingURL=style.css.map */

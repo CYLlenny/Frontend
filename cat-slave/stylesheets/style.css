@@ -1,0 +1,1080 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+body {
+  margin: 0;
+}
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+main {
+  display: block;
+}
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+a {
+  background-color: transparent;
+}
+
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+   * Add the correct font size in all browsers.
+   */
+small {
+  font-size: 80%;
+}
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+img {
+  border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+   * Correct the padding in Firefox.
+   */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+details {
+  display: block;
+}
+
+/*
+   * Add the correct display in all browsers.
+   */
+summary {
+  display: list-item;
+}
+
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+template {
+  display: none;
+}
+
+/**
+   * Add the correct display in IE 10.
+   */
+[hidden] {
+  display: none;
+}
+
+.top-menu ul, .main-menu ul, .new-items ul, .news-and-principle .news ul, .page-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    background-position: 0px 0px;
+  }
+  50% {
+    background-position: 0px -240px;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+
+@keyframes moving {
+  0% {
+    background-position: 0px 0px;
+  }
+  50% {
+    background-position: 0px -240px;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+
+html {
+  font-size: 16px;
+  /*整份文件的字體大小*/
+  font-family: sans-serif;
+  /*字體先設好，避免預設跑掉*/
+  line-height: 1.4;
+  /*行高  未設定單位時預設為EM 每個子元素會重新計算*/
+  color: #555;
+  /*若有單位，子元素會使用父元素內算好的值*/
+}
+
+img {
+  max-width: 100%;
+}
+
+/*
+連結的顏色
+滑鼠覆蓋連結的顏色
+*/
+a {
+  color: #009ced;
+  text-decoration: none;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+a:hover {
+  color: #0081c3;
+  text-decoration: underline;
+}
+
+/*
+部分內容置中
+因此製作一個容器
+讓需要的套用
+*/
+.container {
+  width: 1080px;
+  margin: 0 auto;
+  /*上下 左右*/
+}
+
+/*標頭*/
+.top-menu {
+  background-color: #ff9204;
+  height: 36px;
+  /*
+User Agent Stylesheet 瀏覽器默認樣式
+導致ul 向上向下margin有1em的距離
+因為margin邊界重疊，使樣式不如預期
+因此用CSS清除邊距
+*/
+  /*
+提供選單適當的樣式
+想要指定寬高 必須設成block 或 inline block
+img例外 因為是張圖 所以img是行內也可以指定寬高
+限定單行情況，不換行時 想要置中 只要設定line-height跟height一樣高 
+*/
+}
+
+.top-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.top-menu a {
+  display: block;
+  width: 90px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.top-menu a:hover {
+  background-color: #ff6204;
+}
+
+.top-menu i {
+  margin-right: 5px;
+}
+
+/*距離歸0*/
+h1.logo {
+  margin: 0;
+  /*
+  區塊化 避免行內元素的留白 EX:英文字母g、q、p  底下的空間
+  */
+}
+
+h1.logo a {
+  display: block;
+}
+
+h1.logo img {
+  width: 250px;
+  height: 62px;
+  display: block;
+}
+
+.top-block {
+  height: 80px;
+  background-color: #eee;
+}
+
+.top-block .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 9px 0;
+}
+
+/*將icon推進 搜尋框裡
+將位置改成相對  距離左邊32
+
+輸入游標 也推到正確的位置
+*/
+/*
+將focus搜尋框 取消原本聚焦的方框
+變成改變邊框顏色且有陰影
+*/
+.search {
+  position: relative;
+}
+
+.search input {
+  width: 250px;
+  height: 28px;
+  border: 5px #f00;
+  border-radius: 17px;
+  padding-left: 35px;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #009ced;
+  -webkit-box-shadow: #009ced 0 0 2px;
+          box-shadow: #009ced 0 0 2px;
+}
+
+.search i {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+/*主選單*/
+.main-menu {
+  height: 38px;
+  border-top: #ddd 1px solid;
+  border-bottom: #ddd 1px solid;
+}
+
+.main-menu button {
+  display: none;
+}
+
+.main-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-menu li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+
+.main-menu a {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  color: #3d4143;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.main-menu a:hover {
+  background-color: #ff9204;
+  color: #fff;
+}
+
+/*圖片*/
+/* ../往上一層資料夾 
+左右至中 上下至中  不重複圖片
+*/
+.index-image {
+  height: 400px;
+  background: url(../images/index-image.jpg) center center no-repeat;
+  background-size: cover;
+  /*給文字基本樣式 並定位到 絕對位置 
+調整h2 margin 避免留白
+*/
+}
+
+.index-image .container {
+  position: relative;
+  height: 100%;
+}
+
+.index-image h2 {
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  margin: 0 0 0 150px;
+  /*margin:上 右 下 左;*/
+  left: 50%;
+  /*從中線開始推*/
+  bottom: 80px;
+}
+
+.index-image h2 span {
+  display: block;
+  position: relative;
+  left: 2em;
+}
+
+/*新品*/
+.new-items ul {
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.new-items li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 340px;
+          flex: 0 0 340px;
+}
+
+/*貓奴選物*/
+.featured-item {
+  background-color: #eee;
+  padding: 40px 0;
+}
+
+.featured-item h2 {
+  color: #ff9204;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 30px;
+  /*上0 左右0 下30*/
+}
+
+.featured-item .item-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.featured-item .item-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 360px;
+          flex: 0 0 360px;
+  margin-right: 30px;
+}
+
+.featured-item .item-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.featured-item .user {
+  margin-top: 30px;
+  float: right;
+}
+
+.featured-item .featured-item h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.featured-item .featured-item h3 .user img {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/*訊息和堅持*/
+.news-and-principle {
+  padding: 40px 0;
+}
+
+.news-and-principle .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.news-and-principle .news {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: 0;
+  /*flex 子元素 最小寬為 auto 因此要修改為0
+      不然auto會自動計算超出寬度 改變大小
+      */
+}
+
+.news-and-principle .news h2 {
+  margin: 0 0 20px;
+  width: 120px;
+  height: 36pxt;
+  /*指定寬高*/
+  background: url("../images/news-title@2x.png") no-repeat;
+  /*設成圖片*/
+  background-size: 100% 100%;
+  text-indent: 110%;
+  /*將原本標題 從圖片以外的地方顯示*/
+  white-space: nowrap;
+  /*並且永不換行*/
+  overflow: hidden;
+  /*設定圖片以外的隱藏*/
+  /*即可將內容換成圖片，且原本內容消失*/
+}
+
+.news-and-principle .news li {
+  padding: 8px;
+  border-bottom: #ddd 1px dotted;
+}
+
+.news-and-principle .news li:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.news-and-principle .news a {
+  display: block;
+  /*區塊才有範圍*/
+  white-space: nowrap;
+  /*不換行*/
+  overflow: hidden;
+  /*超出則隱藏*/
+  text-overflow: ellipsis;
+  /*超出範圍的文字則...*/
+  /*外層父元素 要做最小寬度調整*/
+}
+
+.news-and-principle .principle {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 280px;
+          flex: 0 0 280px;
+  margin-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  color: #fff;
+}
+
+.news-and-principle .principle .principle-content {
+  background-color: #ff9204;
+  padding: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.news-and-principle .principle h2 {
+  height: 60px;
+  margin: 0;
+  padding: 20px;
+  background-color: #5f5547;
+  position: relative;
+  /*改創造一個空的內容，當作背景圖，來幫助動畫定位*/
+}
+
+.news-and-principle .principle h2 img {
+  display: none;
+  /*將原本的貓頭鷹CSS改成none 這樣單獨看HTML 東西還是存在
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 5px;
+        vertical-align: middle;
+        background-color: #fff;*/
+}
+
+.news-and-principle .principle h2::before {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+  background: #fff url(../images/cat-head-animate@2x.png) no-repeat;
+  background-size: 60px 300px;
+  -webkit-animation-name: moving;
+          animation-name: moving;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps(4);
+          animation-timing-function: steps(4);
+  /*每一個斷點 就會跑一次定格動畫 0-50% 4次  50-100 4次\*/
+}
+
+.news-and-principle .principle h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  border: transparent 8px solid;
+  border-top: #ff9204 8px solid;
+}
+
+.news-and-principle .principle li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/*頁尾*/
+.page-footer {
+  padding: 20px 0;
+  background-color: #3d4143;
+  color: #fff;
+  text-align: center;
+}
+
+.page-footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.page-footer li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 340px;
+          flex: 0 0 340px;
+}
+
+.page-footer li.business-hours {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+/* RWD */
+@media screen and (max-width: 1140px) {
+  /*當畫面變小  置中容器變小*/
+  .container {
+    width: 820px;
+  }
+  /*因此要去上面把它改成根據容器定位
+  把所有東西還原，然後因為第二排有縮排2，所以要距離右邊2 ;
+  */
+  .index-image h2 {
+    left: auto;
+    margin: 0;
+    right: 2em;
+  }
+  .new-items li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 260px;
+            flex: 0 0 260px;
+  }
+  .page-footer li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 260px;
+            flex: 0 0 260px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  /*當畫面變小  置中容器變小*/
+  .container {
+    width: 740px;
+  }
+  /*新品*/
+  .new-items ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .new-items li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin-bottom: 30px;
+  }
+  .new-items li > a {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 250px;
+            flex: 0 0 250px;
+    margin-right: 30px;
+  }
+  .new-items h2 {
+    margin-top: 0;
+  }
+  .new-items div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .new-items li:last-child {
+    margin-bottom: 0;
+  }
+  /*訊息和堅持*/
+  .news-and-principle .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .news-and-principle .principle {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+  .news-and-principle .principle h2 {
+    background: #fff;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+  .news-and-principle .principle h2::before {
+    border: #ff9204 5px solid;
+  }
+  .news-and-principle .principle h2::after {
+    display: none;
+  }
+  .news-and-principle .principle ol {
+    list-style: none;
+  }
+  .news-and-principle .principle ol li {
+    position: relative;
+  }
+  .news-and-principle .principle ol li::before {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #ff9204;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: 2px;
+    left: -25px;
+  }
+  .news-and-principle .principle ol li:nth-child(1)::before {
+    content: "1";
+  }
+  .news-and-principle .principle ol li:nth-child(2)::before {
+    content: "2";
+  }
+  .news-and-principle .principle ol li:nth-child(3)::before {
+    content: "3";
+  }
+  /*頁尾*/
+  .page-footer ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-footer li {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin: 5px;
+  }
+  .page-footer div {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*768以下視為 手持裝置*/
+  /*目前版面768還可以 因此以767以下開始做調整*/
+  .container {
+    width: 90%;
+  }
+  .item-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .item-content .item-img {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin: 0;
+  }
+  .item-content .item-img img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .top-block {
+    height: auto;
+  }
+  .top-block .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .top-block img {
+    margin: 5px;
+  }
+  .main-menu .container {
+    width: 100%;
+    position: relative;
+  }
+  .main-menu button {
+    display: block;
+    background-color: #fff;
+    border: none;
+    width: 100%;
+    height: 40px;
+  }
+  .main-menu button i {
+    margin-left: 5px;
+  }
+  .main-menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 5;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .new-items li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .new-items li a {
+    margin: 0;
+  }
+  .news-and-principle .news a {
+    white-space: normal;
+  }
+}
+/*# sourceMappingURL=style.css.map */

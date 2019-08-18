@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>記憶翻牌</title>
+
+
+    <style>
+        .contain {}
+
+        .row {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .card {
+            width: 150px;
+            height: 250px;
+            border: 2px #f00 solid;
+            margin: 20px 20px;
+        }
+
+
+        div img {
+
+            width: 150px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="row">
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img1">
+            </div>
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img2">
+            </div>
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img3">
+            </div>
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img5">
+            </div>
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img6">
+            </div>
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img7">
+            </div>
+            <div class="card">
+                <img src="../Card/image/back.png" alt="圖" id="img8">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+    <script>
+        $(function () {
+
+            var cardBack = "back.png";
+            var cardData = ["ace_of_clubs.png", "ace_of_diamonds.png", "ace_of_hearts.png", "ace_of_spades.png",
+                "ace_of_clubs.png", "ace_of_diamonds.png", "ace_of_hearts.png", "ace_of_spades.png"]
+
+            var numberList = [];//抽過的數字
+            var cardList = [];
+            //把每2張格  存入1張牌
+            for (var i = 0; i < 8; i++) {
+
+                if (numberList.length < 8) {
+                    //範圍內 隨機挑一個
+                    var $rand = Math.floor(Math.random() * 8);
+                    //如果被抽過的陣列 裡面沒有這個值  表示還沒抽過
+                    //重複 就重抽
+                    while (numberList.indexOf($rand) != -1) {
+                        $rand = Math.floor(Math.random() * 8);
+                    }
+
+                    numberList.push($rand);
+                    //    console.log($rand)
+                    cardList.push(cardData[$rand]);
+                    //   console.log(cardData[$rand])
+                }
+            }
+
+
+            var indextemp = [];
+            var suittemp = [];
+            var count = 0;
+
+            $(".card").click(function () {
+
+                var $cardDiv = $(".card");
+                var $divIndex = $cardDiv.index(this)
+
+                $("#img" + ($divIndex + 1)).attr("src", "../Card/image/" + cardList[$divIndex])
+
+                indextemp.push(($divIndex + 1));
+                console.log(($divIndex + 1))
+                suittemp.push(cardList[$divIndex]);
+                console.log(cardList[$divIndex])
+                count++
+
+                if (count == 2) {
+                    if (suittemp[0] == suittemp[1]) {
+                        //  $("#img" + indextemp[0]).hide()
+                        //  $("#img" + indextemp[1]).hide()  
+                        Hide(indextemp[0], indextemp[1])
+                        /*
+                         setTimeout(function(){                              
+                             Hide(indextemp[0],indextemp[1])
+                        }, 800);*/
+                    }
+                    else {
+                        setTimeout(function () {
+                            // $("#img" + indextemp[0]).attr("src", "../Card/image/back.png");
+                            // $("#img" + indextemp[1]).attr("src", "../Card/image/back.png");
+                            Back()
+                        }, 800);
+                    }
+                    indextemp = [];
+                    suittemp = [];
+                    count = 0;
+                }
+
+
+            })
+
+            function Hide(i, j) {
+                /*
+                $("#img" + i).hide()
+                console.log(i)
+                $("#img" + j).hide()
+                console.log(j)
+                */
+                setTimeout(function () {
+                    $("#img" + i).hide()
+                    console.log(i)
+                    $("#img" + j).hide()
+                    console.log(j)
+                }, 1000);
+            }
+
+            function Back() {
+                for (var i = 1; i <= 8; i++) {
+                    $("#img" + i).attr("src", "../Card/image/back.png");
+                }
+            }
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

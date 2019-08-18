@@ -1,0 +1,18 @@
+a.card:hover{
+    text-decoration: none;
+}
+
+.news li::before {
+    content: "・"
+}
+
+
+@media screen and (max-width: 560px) {
+    #carouselExampleControls h1 {
+    font-size: 2rem;
+    }
+    /*bootstrap 有寫 important 所以也要寫才蓋的過去*/
+    #carouselExampleControls .btn {
+    margin-top: 0 !important;
+    }
+}

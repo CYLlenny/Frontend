@@ -1,0 +1,669 @@
+/*重複的CSS部分*/
+
+/*框架基本設定*/
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.4;
+  color: #555;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 部分內容置中，因此製作一個容器，讓需要的套用 */
+.container {
+  width: 1080px;
+  margin: 0 auto; /*上下 左右*/
+}
+
+/*top-header*/
+/*背景色、高度*/
+.top-text {
+  background-color: #000;
+  height: 28px;
+}
+
+/*調距離 置中 顏色*/
+.top-text h3 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+/*--------------------------------------*/
+
+/*選單*/
+/*背景色 高度*/
+.main-menu {
+  background-color: #ffa488;
+  height: 36px;
+}
+
+/*浮動 BETWEEN來排*/
+.main-menu .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*左邊連結*/
+/*調距離 然後FLEX*/
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+/*區塊化 方便指定寬高 因為只有一行沒要換行 所以高度設一樣 
+調顏色 置中 文字風格沒底線*/
+.menu li a {
+  display: block;
+  width: 90px;
+  height: 36px;
+  line-height: 36px;
+  margin-right: 20px;
+  color: rgb(65, 65, 65);
+  text-align: center;
+  text-decoration: none;
+}
+/*滑鼠移過去改顏色*/
+.menu li a:hover {
+  background-color: #ff8800;
+}
+
+/*中間文字*/
+/*區塊化 指定寬高 顏色 置中  調整距離*/
+.container .main-text {
+  display: block;
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 250px;
+  font-size: 24px;
+}
+
+/*調整距離*/
+.container .main-text h3 {
+  margin: 0;
+}
+
+/*右邊連結*/
+/*取消瀏覽器預設  FLEX*/
+.community ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+/*區塊化 指定寬高 顏色 置中*/
+.community li i {
+  display: block;
+  width: 30px;
+  height: 36px;
+  line-height: 36px;
+  color: rgb(65, 65, 65);
+  text-align: center;
+  text-decoration: none;
+}
+
+/*滑鼠移過去 改變顏色*/
+.community li i:hover {
+  background-color: #ff8800;
+}
+
+/*--------------------------------------*/
+
+/*中間不重複的地方，寫各自的CSS*/
+/*中間不重複的地方，寫各自的CSS*/
+/*中間不重複的地方，寫各自的CSS*/
+
+/*email訂閱*/
+/*背景色，文字顏色*/
+.subscription-mail {
+  background: #eee;
+  color: #000;
+}
+
+/*FLEX，並垂直*/
+.subscription-mail .container {
+  display: flex;
+  flex: 1 0 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*調距離跟置中*/
+.subscription-mail h1 {
+  margin: 0;
+  padding: 30px 0 20px;
+  flex: 100%;
+  text-align: center;
+}
+
+/*透過變成區塊 直接換行*/
+.subscription-mail .mail-text span {
+  display: block;
+}
+
+/*表單區*/
+.subscription-mail .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*input size 因為將信封推進來 所以內容要朝右一點*/
+.sub input {
+  width: 500px;
+  height: 20px;
+  padding-left: 35px;
+  margin-bottom: 20px;
+}
+
+.sub i {
+  position: relative;
+  left: 32px;
+}
+
+.sub-btn .btn {
+  width: 540px;
+  background-color: #000;
+  color: #fff;
+  margin-bottom: 40px;
+  margin-left: 19px;
+}
+
+/*頁尾*/
+/*menu*/
+.footer-menu {
+  background-color: #555;
+  height: 36px;
+}
+
+.footer-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-menu ul li {
+  flex: 0 0 150px;
+}
+
+.footer-menu li a {
+  color: #eee;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer-menu li a:hover {
+  background-color: #ff8800;
+}
+
+/*copy*/
+.page-footer .copyright {
+  background-color: #eee;
+  color: #555;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+
+/*index 的內容*/
+/*圖片*/
+.index-image {
+  height: 600px;
+  background: url(../images/index-image.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.index-image h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  margin: 0 0 0 150px; /*margin:上 右 下 左;*/
+  top: 80px;
+}
+
+/*商品*/
+.hot-item {
+  text-align: center;
+}
+
+.hot-item .hot-header {
+  font-size: 20px;
+  color: #000;
+}
+
+.hot-item ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.hot-item li {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.hot-item span {
+  display: block;
+  padding-top: 5px;
+}
+
+/*資訊*/
+.text-message {
+  height: 300px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+}
+
+.text-message h2 {
+  margin: 0;
+  padding: 30px 0;
+  font-size: 40px;
+}
+
+.featured-text span {
+  display: block;
+}
+
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+
+/*item 的內容*/
+.item-text .container {
+  height: auto;
+}
+
+/*上方超連結*/
+.item-text .item-menu ul {
+  margin: 0;
+  padding: 20px 0;
+  list-style: none;
+  display: flex;
+}
+
+.item-menu a {
+  padding: 0 10px;
+  color: rgb(37, 37, 37);
+  text-decoration: none;
+  text-align: center;
+}
+.item-menu a:hover {
+  background-color: #ff8800;
+}
+
+/*中間物品資訊*/
+.item-text .item-data {
+  display: flex;
+  justify-content: center;
+}
+
+.item-data .img-and-text {
+  width: 600px;
+  margin-right: 30px;
+}
+
+.img-and-text .item-text {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/*右半區*/
+.item-data .other {
+  width: 400px;
+}
+
+.other .buy-data {
+  height: 50%;
+  border-bottom: #555 1px solid;
+}
+
+/*上半*/
+
+.buy-data h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.buy-data p {
+  margin: 10px 0;
+}
+.buy-data .count {
+  display: block;
+  width: 50px;
+  margin: 10px 0;
+}
+.buy-data .buy-btn {
+  width: 90%;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+}
+
+.buy-data select {
+  width: 90%;
+  height: 50px;
+  margin: 5px 0;
+  display: block;
+}
+
+/*下半*/
+.other .other-data {
+  height: 50%;
+}
+
+.other-data h3 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.other-data ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.other-data li {
+  display: flex;
+  padding: 0;
+}
+
+.other-data img {
+  padding: 0 30px 20px 0;
+}
+
+.other .name-and-money {
+  text-align: center;
+  align-self: center;
+}
+
+.name-and-money span {
+  display: block;
+}
+
+/*下方連結*/
+
+.item-text .item-move ul {
+  margin: 0;
+  padding: 20px 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.item-move li {
+  padding: 0 10px;
+}
+
+.item-move a {
+  color: #555;
+}
+
+.item-move a:hover {
+  background-color: #ff8800;
+}
+
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+
+/*cart 的內容*/
+/*中間*/
+
+.item-buy .container {
+  height: 800px;
+}
+/*-----------------------*/
+.move-item {
+  height: 50px;
+}
+
+.move-item a {
+  text-decoration: none;
+  color: #555;
+}
+/*-----------------------*/
+/*-----------------------*/
+.buy-top {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.buy-top ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.left-text {
+  padding-left: 100px;
+  width: 580px;
+}
+
+.right-text {
+  width: 400px;
+}
+
+.buy-top .right-text ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*-----------------------*/
+
+/*-----------------------*/
+.buy-mid {
+  height: 150px;
+  border-top: #555 1px solid;
+  border-bottom: #555 1px solid;
+  padding-top: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-mid .left-text {
+  display: flex;
+}
+
+.buy-mid img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.buy-mid h3 {
+  margin: 0;
+}
+
+.buy-mid a {
+  color: #555;
+}
+
+.buy-mid ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.buy-mid input {
+  width: 50px;
+}
+
+.buy-mid .right-text ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+/*-----------------------*/
+.buy-btm {
+  height: 350px;
+  padding-top: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-btm input {
+  margin-left: 5px;
+  width: 100px;
+}
+
+.buy-btm ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-btm li {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-btm .btm-right {
+  padding-right: 100px;
+  margin-bottom: 20px;
+}
+
+.buy-btm button {
+  width: 300px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  height: 40px;
+}
+
+@media screen and (max-width: 1140px) {
+  /*當畫面變小  置中容器變小*/
+  .container {
+    width: 820px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  /*當畫面變小  置中容器變小*/
+  .container {
+    width: 740px;
+  }
+
+  .container .main-text {
+    margin-right: 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*768以下視為 手持裝置*/
+  /*目前版面768還可以 因此以767以下開始做調整*/
+  .container {
+    width: 90%;
+  }
+
+  .menu li a {
+    width: 70px;
+    margin-right: 10px;
+  }
+
+  .container .main-text {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /*768以下視為 手持裝置*/
+  /*目前版面768還可以 因此以767以下開始做調整*/
+  .container {
+    width: 90%;
+  }
+
+  .menu li a {
+    width: 70px;
+    margin-right: 10px;
+  }
+
+  .container .main-text {
+    margin: 0;
+  }
+
+  .hot-item ul {
+    flex-direction: column;
+  }
+  .hot-item ul a {
+    display: block;
+  }
+
+  /*item*/
+  .item-data {
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
+  .item-data .img-and-text {
+    width: 600px;
+    height: 700px;
+    margin: 0;
+  }
+
+  .img-and-text .item-text {
+    width: 400px;
+  }
+
+  .item-data .img-and-text img {
+    width: 500px;
+  }
+
+  .img-and-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*cart*/
+
+  .buy-top li {
+    width: 100px;
+  }
+  .buy-top .left-text {
+    padding-left: 50px;
+  }
+
+  .buy-mid {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 200px;
+  }
+
+  .buy-mid .left-text {
+    padding-left: 50px;
+  }
+
+  .buy-btm {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 50px;
+  }
+}

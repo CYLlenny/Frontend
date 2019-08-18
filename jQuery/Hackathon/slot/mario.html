@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小瑪莉</title>
+
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="random">
+            <div class="picture">
+                <div>
+                    <img src="image/diamond.jpg" alt="1" id="img1">
+                </div>
+                <div>
+                    <img src="image/bar.jpg" alt="2" id="img2">
+                </div>
+                <div>
+                    <img src="image/strawberry.jpg" alt="3" id="img3">
+                </div>
+                <div>
+                    <img src="image/star.jpg" alt="4" id="img4">
+                </div>
+                <div>
+                    <img src="image/bar.jpg" alt="5" id="img5">
+                </div>
+                <div>
+                    <img src="image/crown.jpg" alt="6" id="img6">
+                </div>
+            </div>
+
+            <div class="picture re">
+                <div>
+                    <img src="image/strawberry.jpg" alt="7" id="img7">
+                </div>
+                <div>
+                    <img src="image/strawberry.jpg" alt="18" id="img18">
+                </div>
+            </div>
+
+            <div class="picture re">
+                <div>
+                    <img src="image/bar.jpg" alt="8" id="img8">
+                </div>
+                <div>
+                    <img src="image/star.jpg" alt="17" id="img17">
+                </div>
+            </div>
+
+            <div class="picture re">
+                <div>
+                    <img src="image/diamond.jpg" alt="9" id="img9">
+                </div>
+                <div>
+                    <img src="image/crown.jpg" alt="16" id="img16">
+                </div>
+            </div>
+
+            <div class="picture re">
+                <div>
+                    <img src="image/strawberry.jpg" alt="10" id="img10">
+                </div>
+                <div>
+                    <img src="image/bar.jpg" alt="11" id="img11">
+                </div>
+                <div>
+                    <img src="image/seven.jpg" alt="12" id="img12">
+                </div>
+                <div>
+                    <img src="image/star.jpg" alt="13" id="img13">
+                </div>
+                <div>
+                    <img src="image/strawberry.jpg" alt="14" id="img14">
+                </div>
+                <div>
+                    <img src="image/star.jpg" alt="15" id="img15">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bet">
+            <button id="btn" type="button">GO</button>
+
+            <div class="words">
+                <div class="word">1000</div>
+                <div class="word">500</div>
+                <div class="word">300</div>
+                <div class="word">200</div>
+                <div class="word">100</div>
+                <div class="word">50</div>
+            </div>
+
+            <div class="imgs">
+                <div class="point"><img src="image/seven.jpg" alt="1"></div>
+                <div class="point"><img src="image/diamond.jpg" alt="1"></div>
+                <div class="point"><img src="image/crown.jpg" alt="1"></div>
+                <div class="point"><img src="image/star.jpg" alt="1"></div>
+                <div class="point"><img src="image/bar.jpg" alt="1"></div>
+                <div class="point"><img src="image/strawberry.jpg" alt="1"></div>
+            </div>
+
+            <div class="counts">
+                <div class="count" type="text" id="c1">0</div>
+                <div class="count" type="text" id="c2">0</div>
+                <div class="count" type="text" id="c3">0</div>
+                <div class="count" type="text" id="c4">0</div>
+                <div class="count" type="text" id="c5">0</div>
+                <div class="count" type="text" id="c6">0</div>
+            </div>
+
+            <div class="btns">
+                <button class="cbtn">下注</button>
+                <button class="cbtn">下注</button>
+                <button class="cbtn">下注</button>
+                <button class="cbtn">下注</button>
+                <button class="cbtn">下注</button>
+                <button class="cbtn">下注</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var img_id = []
+            var move = 0;
+            var now = 1;
+
+            for (var i = 1; i <= 16; i++) {
+                $("#img" + i).addClass("img-responsive")
+                img_id.push($("#img" + i))
+            }
+
+            $("#btn").click(function () {
+                move = Math.floor(Math.random() * 16) + 1;  //1~16
+                move += img_id.length * 5  //先跑5圈  隨機值為停下來
+
+                for(var i=1;i<=6;i++)
+                {
+                    $("#c"+i).html(0)
+                }
+                highLight()
+            })
+
+            function highLight() {
+                $("#img" + now).addClass("active")
+
+                setTimeout(function () {
+                    $("#img" + now).removeClass("active")
+                    now++;
+                }, 50);
+
+                if (now > 16) {
+                    now = 0;
+                }
+
+                if ((move - 1) > 0) {
+                    move--;
+                    setTimeout(highLight, 50);
+                }
+            }
+
+
+            $(".cbtn").click(function () {
+
+                var cells = $(".btns .cbtn");
+                var i = cells.index(this);
+
+                i=i+1
+                var count = $("#c"+i).html()
+                count++
+                $("#c"+i).html(count)
+
+
+            })
+
+
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yan-拼圖遊戲</title>
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+
+    <div id="btn">
+        <button>打亂圖片</button>
+    </div>
+    <div id="title">
+        <h1>遊戲區</h1>
+        <h1>對照區</h1>
+    </div>
+    <div id="picture">
+        <div id="game">
+
+        </div>
+        <div id="image">
+            <img src="images/image1.jpg" alt="對照組圖片">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+
+
+    <script>
+
+        //遊戲區 初始資料
+        $(function () {
+            var data = {};
+
+            for (var i = 0; i < 16; i++) {
+
+                var html = "<img src='images/image1.jpg' \>";
+                //產生2維的格子 
+                var row = Math.floor((i / 4));
+                var col = Math.floor((i % 4));
+
+                //將每筆資料的位置 存進DATA
+                data[i] = { row: row, col: col };
+
+                $("<div></div>")   //增加16個區塊
+                    .addClass("picbtn") //加class 方便對全部做事
+                    .html(html) //加img
+                    .attr("id", "pic" + i) //加id 方便針對每一個做事
+                    .css("width", "150px") //限定寬高   150*4=600
+                    .css("height", "150px")
+                    .css("overflow", "hidden")//超出隱藏
+                    .css("position", "relative")
+                    .appendTo("#game");
+
+                $("#pic" + i + " img")
+                    .css("position", "absolute")
+                    .css("top", row * -150 + "px") //改變圖片的位置 讓顯示框對照不同的區塊  //類似貓奴的貓頭鷹
+                    .css("left", col * -150 + "px")
+
+                $("#pic0 img")
+                    .css("visibility", "hidden")
+            }
+
+
+            function getNear(i) {
+                var near = [];
+                //用二維的算法 去抓四周的格子
+                var row = data[i].row;
+                var col = data[i].col;
+
+                if (row > 0)
+                    near.push((row - 1) * 4 + col);
+                if (row < 4)
+                    near.push((row + 1) * 4 + col);
+                if (col > 0)
+                    near.push(i - 1);
+                if (col < 4)
+                    near.push(i + 1);
+
+                return near;
+            }
+
+            $(".picbtn").click(function () {
+                var cells = $("#game div");
+                //抓到點擊的是哪個
+                var i = cells.index(this);
+                //確認周圍
+                var check = getNear(i);
+
+                while (check.length > 0) {  //如果有空白格 才能交換
+                    var j = check.pop();  //每一次拿出周圍的值 來比較
+
+                    if (cells.eq(j).attr("id") == "pic0") //為空白格，交換位子
+                    {
+                        /*
+                        //宣告一個空間 用來存放0的html
+                        var top_temp = $("#pic" + j + " img").css("top")
+                        var left_temp = $("#pic" + j + " img").css("left")
+
+                        var id_temp = cells.eq(j).attr("id") //空白的
+                        var id_temp2 = cells.eq(i).attr("id") //被點的
+                        alert(id_temp)
+                        alert(id_temp2)
+
+                        //把0的那格CSS 改成 點擊的CSS
+                        $("#pic" + j + " img").css("top", $("#pic" + i + " img").css("top"))
+                        $("#pic" + j + " img").css("left", $("#pic" + i + " img").css("left"))
+                        $("#pic" + j + " img").css("visibility", "visible")
+
+                        //被點擊的 改成 0 剛剛存的
+                        $("#pic" + i + " img").css("top", top_temp)
+                        $("#pic" + i + " img").css("left", left_temp)
+                        $("#pic" + i + " img").css("visibility", "hidden")
+
+                        cells.eq(j).attr("id", id_temp2)
+                        cells.eq(i).attr("id", id_temp)
+
+
+                        原本想以交換值的方式，後來發現ID也要跟著換 ，不然無法判斷
+                        但是後來發現，id似乎再生成的時候就固定了，變更之後無法抓到
+                        */
+
+                        //，讓i < j        
+                        //為了避免 j = 0 的時候 如果沒交換i j  
+                        if (i > j) { var k = j; j = i; i = k; }
+                        var ahead = cells.eq(i);
+                        var behind = cells.eq(j);
+                        // 0的前一個元素 沒有東西 會抓不到prev  147行 無法執行  順序會出錯
+                        var behindPrev = behind.prev();
+
+                        //左右對調
+                        if (Math.abs(i - j) == 1)
+                            behind.after(ahead);
+                        else //上下對調
+                        {
+                            ahead.after(behind);
+                            behindPrev.after(ahead);
+                        }
+
+                        break;
+
+                    }
+                }
+            })
+
+            $("#btn").click(function () {
+                //打亂圖片
+
+                //用點擊的方式打亂  一定排的回來 
+                for (var i = 0; i < 1000; i++) { //大量執行 打亂  
+                    var cells = $("#game div");
+                    var zero = getNear(cells.index($("#pic0")[0]));//找到空白的格子周圍有誰
+                    var number = Math.floor(Math.random() * zero.length)  //隨機挑一個
+                    cells.eq(zero[number]).click() //用隨機挑到的 執行點擊的事件
+                }
+
+            })
+        });
+
+    </script>
+
+</body>
+
+</html>

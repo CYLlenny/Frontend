@@ -1,0 +1,21 @@
+@import"normalize";
+
+.container {
+    background: #f8ceb6;
+}
+
+.row-button {
+    margin-bottom: 20px;
+}
+
+.img-run {
+    border:none;
+    transition: all 0s;
+}
+
+.img-run.active {
+    border: 5px #e77575 solid;
+    box-shadow: 0 0 20px #e77575; //陰影效果
+    transition: all 0.3s;
+}
+

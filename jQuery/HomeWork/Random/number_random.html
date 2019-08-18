@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抽獎機</title>
+
+    <style>
+        div {
+            text-align: center;
+            margin: 20px 0px;
+        }
+
+        input {
+            margin-left: 5px;
+        }
+
+        #input1 {
+            margin-right: 20px;
+        }
+
+        button {
+            width: 500px;
+            height: 50px;
+            font-size: 1.5em;
+        }
+
+        #screen {
+            height: 500px;
+            width: 500px;
+            border: 5px #000 solid;
+            margin: 0 auto;
+            line-height: 500px;
+            font-size: 5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        最小號碼<input type="text" id="input1">
+        最大號碼<input type="text" id="input2">
+    </div>
+
+    <div>
+        <button id="btn">抽抽抽抽抽</button>
+        <p id="numberList">已經抽出的數字:</p>
+    </div>
+
+    <div id="screen">
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+
+            var $range_min = 0;
+            var $range_max = 0;
+            var numberList = []; //存放抽過的數字  要排除 不可重複抽
+
+            $("#btn").click(function () {
+                var $min = parseInt($("#input1").val());
+                var $max = parseInt($("#input2").val());
+
+                console.log($min)
+                console.log($max)
+                if ($min < $max) {             
+                    $range_min = $min;
+                    $range_max = $max;
+                    randomNumber()
+                }
+                else {
+                    alert("輸入數值且最小號碼小於最大號碼");
+                }
+            })
+
+            function randomNumber() {
+                //還沒全部抽到 才能抽
+                if (numberList.length < ($range_max - $range_min + 1)) {
+                    //範圍內 隨機挑一個
+                    var $rand = Math.floor(Math.random() * ($range_max - $range_min + 1)) + $range_min;
+                    //如果被抽過的陣列 裡面沒有這個值  表示還沒抽過
+                    //重複 就重抽
+                    while (numberList.indexOf($rand) != -1) {
+                        $rand = Math.floor(Math.random() * ($range_max - $range_min + 1)) + $range_min;
+                    }
+
+                    numberList.push($rand);
+                    console.log($rand);
+
+                    var listText = $("#numberList");
+                    text = listText.html();
+                    text += $rand+"  ";
+                    listText.html(text)
+
+                    $("#screen").html($rand);
+                }
+                else {
+                    alert("範圍內的值，都被抽過了")
+                }
+
+                
+
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>

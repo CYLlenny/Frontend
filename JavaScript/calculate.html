@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>小算盤</title>
+</head>
+
+<body>
+    <div class="">
+        <div class="container mt-4 mb-3 p-0 ">
+            <div class="text-center row">
+                <h1 class="col-12">計算結果</h1>
+                <h1 id="number" class="col-12">0</h1>
+                <input type="text" id="input" class="text-center col-12" readonly>
+            </div>
+        </div>
+
+        <div class="container p-0">
+            <div id="buttons" class="">
+                <div class="row pb-3">
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">1</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">2</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">3</a></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">4</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">5</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">6</a></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">7</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">8</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">9</a></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">0</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button">.</a></div>
+                    <div class="col-4"><a class="btn btn-default btn-block btn-dark" href="#" role="button"
+                            id="reset">清除</a></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-3"><a class="btn btn-default btn-block btn-danger" href="#" role="button"
+                            id="Add">+</a></div>
+                    <div class="col-3"><a class="btn btn-default btn-block btn-danger" href="#" role="button"
+                            id="Sub">-</a></div>
+                    <div class="col-3"><a class="btn btn-default btn-block btn-danger" href="#" role="button"
+                            id="Mul">*</a></div>
+                    <div class="col-3"><a class="btn btn-default btn-block btn-danger" href="#" role="button"
+                            id="Div">/</a></div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-12"><a class="btn btn-default btn-block btn-danger" href="#" role="button"
+                            id="equal">=</a></div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //存運算子 跟 運算元
+        var Operator = "";
+        var temp = new Array();
+        //每個按鍵抓值
+        function inputButton() {
+            var input = document.getElementById("input");
+            var text = this.innerHTML;
+            input.value += text;
+        }
+
+        var inputButtons = document.getElementsByClassName("btn");
+        for (var i = 0; i < inputButtons.length; i++) {
+            inputButtons[i].onclick = inputButton;
+        }
+
+        //清除鍵
+        function clearInput() {
+            var input = document.getElementById("input");
+            input.value = "";
+        }
+
+        var clear = document.getElementById("reset");
+        clear.onclick = clearInput;
+
+        //+
+        function Add() {
+            var input = document.getElementById("input");
+            var text = this.innerHTML;
+            input.value += text;
+            //如果目前不是+ 則運算子改為+
+            if (Operator != "+") {
+                Operator = "+";
+            }
+
+        }
+        var Add_btn = document.getElementById("Add");
+        Add_btn.onclick = Add;
+
+        //-
+        function Sub() {
+            var input = document.getElementById("input");
+            var text = this.innerHTML;
+            input.value += text;
+            //如果目前不是- 則運算子改為-
+            if (Operator != "-") {
+                Operator = "-";
+            }
+
+        }
+        var Sub_btn = document.getElementById("Sub");
+        Sub_btn.onclick = Sub;
+
+        //*
+        function Mul() {
+            var input = document.getElementById("input");
+            var text = this.innerHTML;
+            input.value += text;
+            //如果目前不是* 則運算子改為*
+            if (Operator != "*") {
+                Operator = "*";
+            }
+
+        }
+        var Mul_btn = document.getElementById("Mul");
+        Mul_btn.onclick = Mul;
+
+        //除
+        function Div() {
+            var input = document.getElementById("input");
+            var text = this.innerHTML;
+            input.value += text;
+            //如果目前不是/ 則運算子改為/
+            if (Operator != "/") {
+                Operator = "/";
+            }
+
+        }
+        var Div_btn = document.getElementById("Div");
+        Div_btn.onclick = Div;
+
+        //=
+        function equal() {
+            var input = document.getElementById("input");
+            var number = document.getElementById("number");
+            
+            switch (Operator) {
+                case "+":
+                    temp = input.value.split("+");
+                    number.innerHTML = parseFloat(temp[0]) + parseFloat(temp[1]) ;
+                    break;
+                case "-":
+                    temp = input.value.split("-");
+                    number.innerHTML = parseFloat(temp[0]) - parseFloat(temp[1]) ;
+                    break;
+                case "*":
+                    temp = input.value.split("*");
+                    number.innerHTML = parseFloat(temp[0]) * parseFloat(temp[1]) ;
+                    break;
+                case "/":
+                    temp = input.value.split("/");
+                    number.innerHTML = parseFloat(temp[0]) / parseFloat(temp[1]) ;
+                    break;
+            }
+
+            input.value="";
+        }
+        var equal_btn = document.getElementById("equal");
+        equal_btn.onclick = equal;
+
+
+    </script>
+</body>
+
+</html>
